@@ -1,0 +1,13 @@
+.menuContainer {
+    border-radius: 10px;
+
+    .menuItem {
+        padding :5px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(148, 148, 148, 0.1);
+        }
+    }
+}

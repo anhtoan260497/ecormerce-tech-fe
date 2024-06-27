@@ -1,0 +1,12 @@
+.menuMobileContainer {
+    position: fixed;
+    bottom: 0;
+    height: 64px;
+    width: 100%;
+
+    .menuMobileItem {
+        font-weight: 600;
+        font-size: 14px;
+        filter: brightness(0) saturate(100%)
+    }
+}

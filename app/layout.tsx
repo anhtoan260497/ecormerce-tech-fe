@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/layouts/Header/Header";
+import variables from './variables.module.scss'
+import MenuMobile from "@/components/MenuMobile/MenuMobile";
 
 
 export const metadata: Metadata = {
@@ -19,8 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {children}
-        </body>
+        <div className='app-responsive'>
+          {children}
+        </div>
+        <MenuMobile />
+      </body>
     </html>
   );
 }
