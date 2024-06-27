@@ -1,0 +1,179 @@
+@use '@/app/variables.module.scss' as *;
+
+.headerContainerFluid {
+    background-color: $primary-color;
+    height: 64px;
+    padding: 10px;
+
+    .headerContainer {
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+        margin: auto;
+        gap: 10px;
+
+        .logoMobile {
+            display: none;
+        }
+
+        .headerItem {
+            color: white;
+            padding: 5px 10px;
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            .headerItemLocation {
+                font-size: 12px;
+
+                h3 {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .headerItemSearch {
+            width: 300px;
+            position: relative;
+
+            input {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                outline: none;
+                border: none;
+                color: black;
+                padding: 0 30px;
+
+                &:focus {
+                    &+.headerItemSearchIconClose {
+                        display: block;
+                    }
+                }
+            }
+
+            .headerItemSearchIcon {
+                position: absolute;
+                left: 20px;
+                display: block;
+            }
+
+            .headerItemSearchIconClose {
+                position: absolute;
+                right: 20px;
+                display: none;
+            }
+        }
+
+        .headerItemMenu {
+            background: hsla(0, 0%, 100%, .2);
+        }
+
+        .headerItemResponsive {
+            width: 100px;
+        }
+    }
+}
+
+.isMobile {
+    display: none;
+}
+
+
+@media only screen and (max-width : 1200px) {
+    .headerContainerFluid {
+
+        .headerContainer {
+            max-width: 96%;
+
+            .logo {
+                width: 120px;
+            }
+
+            .headerItemSearch {
+                width: 250px;
+            }
+
+            .headerItemMenu {
+                background: hsla(0, 0%, 100%, .2);
+            }
+
+            .headerItemResponsive {
+                width: 130px;
+            }
+
+            .headerItemMenuLocation {
+                width: 180px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 990px) {
+    .headerContainerFluid {
+
+        .headerContainer {
+
+            .logo {
+                display: none;
+            }
+
+            .logoMobile {
+                display: block;
+                border: 1px solid white;
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+            }
+
+            .headerItemSearch {
+                width: 200px;
+            }
+
+            .headerItemResponsive {
+                width: 200px;
+            }
+
+            .headerItemMenuLocation {
+                width: 280px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .isDesktop {
+        display: none;
+    }
+
+    .isMobile {
+        display: flex;
+    }
+
+    .headerContainerFluid {
+
+        .headerContainer {
+            max-width: 96%;
+
+            .logo {
+                width: 120px;
+            }
+
+            .headerItemSearch {
+                width: 30%;
+            }
+
+            .headerItemMenu {
+                background: hsla(0, 0%, 100%, .2);
+            }
+
+            .headerItemMenuLocation {
+                width: 50%;
+            }
+        }
+    }
+}
