@@ -61,13 +61,13 @@ function Menu() {
     const renderMenuItem = () => {
         return menu.map(item => {
             return (
-                <div className={clsx(styles.menuItem, 'flex', 'justify-between', 'p-1')}>
-                <div className='flex gap-2'>
-                    <Image src={item.icon} alt={item.title} width={25} height={25} />
-                    <p>{item.title}</p>
+                <div className={clsx(styles.menuItem, 'flex', 'justify-between', 'p-1')} key={item.title}>
+                    <div className='flex gap-2'>
+                        <Image src={item.icon} alt={item.title} width={25} height={25} />
+                        <p>{item.title}</p>
+                    </div>
+                    <FontAwesomeIcon icon={faChevronRight} width={10} />
                 </div>
-                <FontAwesomeIcon icon={faChevronRight} width={10} />
-            </div>
             )
         })
     }
