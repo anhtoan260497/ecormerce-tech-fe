@@ -1,25 +1,20 @@
 
 'use client'
-import React, { ReactElement, useState } from 'react';
-import styles from './Carousel.module.scss'
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react'
 import clsx from 'clsx';
+import Image from 'next/image';
+import { useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import Image from 'next/image';
-import { title } from 'process';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FreeMode, Navigation, Thumbs, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import CarouselNavigationBtn from '../CarouselNavigationBtn/CarouselNavigationBtn';
+import styles from './Carousel.module.scss';
 
 function Carousel() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null as any);
   const [activeIndex, setActiveIndex] = useState(0);
-  const swiper = useSwiper()
-  console.log(swiper)
 
 
 
@@ -40,8 +35,6 @@ function Carousel() {
       href: ''
     },
   ]
-
-
 
 
   const renderCarouselItems = () => {
@@ -67,19 +60,19 @@ function Carousel() {
   }
 
   return (
-    <div className={clsx('md:w-4/5 lg:w-4/5 xl:w-3/5 box-shadow mySwiper', styles.carouselContainer)}>
+    <div className={clsx('md:w-4/5 md:block lg:w-4/5 xl:w-3/5 box-shadow hidden', styles.carouselContainer)}>
       <Swiper
         loop={false}
         spaceBetween={0}
         navigation={{
           nextEl: styles.swiperButtonNext,
-          // prevEl: styles.swiperButtonPrev,
+          prevEl: styles.swiperButtonPrev,
           enabled: true
         }}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[Navigation, Thumbs]}
+        modules={[Navigation, Thumbs, Autoplay]}
         className={styles.swiperBanner}
-        autoplay
+        autoplay={{ delay: 3000 }}
         onActiveIndexChange={(e) => setActiveIndex(e.activeIndex)}
       >
         {renderCarouselItems()}

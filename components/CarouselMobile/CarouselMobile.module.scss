@@ -1,0 +1,17 @@
+@use '../Carousel/Carousel.module.scss' as *;
+
+.carouselMobileContainer {
+    position: relative;
+
+    img {
+        border-radius: 10px;
+    }
+
+
+    .paginationBulletItem  {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #707070 !important;
+    }
+}
