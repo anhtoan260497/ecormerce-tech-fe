@@ -74,7 +74,7 @@ function Menu() {
 
 
     return (
-        <div className={clsx('md:w-1/5 box-shadow', styles.menuContainer)}>
+        <div className={clsx('md:w-1/5 md:block box-shadow hidden', styles.menuContainer)}>
             {renderMenuItem()}
         </div>
     );
