@@ -28,11 +28,13 @@
     display: none;
 }
 
+
 @media only screen and (max-width : 1200px) {
     .app-responsive {
         max-width: 96%;
     }
 }
+
 
 @media only screen and (max-width : 768px) {
     .menu-mobile-responsive {

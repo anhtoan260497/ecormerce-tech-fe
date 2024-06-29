@@ -1,11 +1,15 @@
+import Carousel from "@/components/Carousel/Carousel"
 import Menu from "@/components/Menu/Menu"
+import TopBanner from "@/components/TopBanner/TopBanner"
 
 
 const Home = () => {
 
     return (
-        <div className="">
+        <div className="flex gap-3">
             <Menu />    
+            <Carousel />
+            <TopBanner />
         </div>
     )
 }
