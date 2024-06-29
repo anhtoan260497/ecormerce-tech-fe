@@ -1,0 +1,18 @@
+.TopBannerContainer {
+    .TopBannerItem {
+        height: 33%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        border-radius: 10px;
+    }
+}
+
+
+@media only screen and (max-width : 1200px) {
+    .TopBannerContainer {
+        display: none;
+    }
+}
