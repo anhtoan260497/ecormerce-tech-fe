@@ -2,7 +2,8 @@ import styles from '../Carousel/Carousel.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import {useSwiper} from 'swiper/react'
-function CarouselNavigationBtn({type} : {type : 'next' | 'prev'}) {
+import { CSSProperties } from 'react';
+function CarouselNavigationBtn({type, style} : {type : 'next' | 'prev', style? : CSSProperties}) {
 
     const swiper = useSwiper()
 
@@ -14,7 +15,7 @@ function CarouselNavigationBtn({type} : {type : 'next' | 'prev'}) {
     }
     
     return (
-        <div className={type === 'next' ? styles.swiperButtonNext : styles.swiperButtonPrev} onClick={type === 'next' ? () => swiper.slideNext() : () => swiper.slidePrev()}>{renderIcon()}</div>
+        <div style={style} className={type === 'next' ? styles.swiperButtonNext : styles.swiperButtonPrev} onClick={type === 'next' ? () => swiper.slideNext() : () => swiper.slidePrev()}>{renderIcon()}</div>
     );
 }
 
