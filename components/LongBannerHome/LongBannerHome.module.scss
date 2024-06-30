@@ -1,0 +1,23 @@
+.longBannerHomeDesktop {
+    margin: 10px 0;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.longBannerHomeMobile {
+    display: none;
+}
+
+@media only screen and (max-width :768px) {
+    .longBannerHomeDesktop {
+        display: none;
+    }
+
+    .longBannerHomeMobile {
+        display: block;
+        margin : 5px 0px 5px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}

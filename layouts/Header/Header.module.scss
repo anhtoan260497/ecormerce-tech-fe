@@ -76,7 +76,7 @@
         }
 
         .headerItemResponsive {
-            width: 100px;
+            width: 110px;
         }
     }
 }
@@ -167,6 +167,7 @@
 
             .headerItemSearch {
                 width: 30%;
+                transition: width .2s ease;
             }
 
             .headerItemMenu {
