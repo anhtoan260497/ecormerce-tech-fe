@@ -1,5 +1,5 @@
-
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import styles from './Header.module.scss'
 import Image from 'next/image'
 import clsx from 'clsx'
@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCartShopping, faChevronDown, faLocation, faLocationDot, faPhone, faSearch, faTruck, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
+
+    const [isFocusInput, setIsFocusInput] = useState(false)
+
     return (
         <>
             <div className={clsx(styles.headerContainerFluid, styles.isDesktop, 'flex-center')}>
@@ -63,13 +66,13 @@ const Header = () => {
             <div className={clsx(styles.headerContainerFluid, styles.isMobile)}>
                 <Image src='/assets/images/svg/logoMobile.svg' width={40} height={40} alt='hello' className={styles.logoMobile} />
                 <div className={clsx(styles.headerContainer, 'flex')}>
-                    <div className={clsx(styles.headerItem, styles.headerItemSearch)}>
+                    <div className={clsx(styles.headerItem, styles.headerItemSearch)} style={{width : isFocusInput ? '100%' : '30%'}}   >
                         <FontAwesomeIcon icon={faSearch} className={styles.headerItemSearchIcon} width={15} color='black' />
-                        <input />
+                        <input onFocus={() => setIsFocusInput(true)} onBlur={() => setIsFocusInput(false)} />
                         <FontAwesomeIcon icon={faXmark} className={clsx(styles.headerItemSearchIconClose)} width={15} color='black' />
                     </div>
 
-                    <div className={clsx(styles.headerItem, styles.headerItemMenu, styles.headerItemMenuLocation)}>
+                    {!isFocusInput && <><div className={clsx(styles.headerItem, styles.headerItemMenu, styles.headerItemMenuLocation)}>
                         <FontAwesomeIcon icon={faLocationDot} width={15} color='white' />
                         <div className={clsx(styles.headerItemLocation)}>
                             <h3>Xem giá tại</h3>
@@ -83,7 +86,7 @@ const Header = () => {
                         <div className={clsx(styles.headerItemLocation)}>
                             <p>Giỏ hàng</p>
                         </div>
-                    </div>
+                    </div></>}
                 </div>
             </div>
         </>
