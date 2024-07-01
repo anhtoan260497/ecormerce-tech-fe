@@ -28,6 +28,13 @@
     display: none;
 }
 
+.swiper-wrapper {
+    width: 100% !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    display : none !important;
+}
 
 @media only screen and (max-width : 1200px) {
     .app-responsive {
