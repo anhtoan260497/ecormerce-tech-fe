@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import {useSwiper} from 'swiper/react'
 import { CSSProperties } from 'react';
-function CarouselNavigationBtn({type, style} : {type : 'next' | 'prev', style? : CSSProperties}) {
+import clsx from 'clsx';
+function CarouselNavigationBtn({type, style, className} : {type : 'next' | 'prev', style? : CSSProperties, className? :  string}) {
 
     const swiper = useSwiper()
 
@@ -15,7 +16,7 @@ function CarouselNavigationBtn({type, style} : {type : 'next' | 'prev', style? :
     }
     
     return (
-        <div style={style} className={type === 'next' ? styles.swiperButtonNext : styles.swiperButtonPrev} onClick={type === 'next' ? () => swiper.slideNext() : () => swiper.slidePrev()}>{renderIcon()}</div>
+        <div style={style} className={clsx(type === 'next' ? styles.swiperButtonNext : styles.swiperButtonPrev, className)} onClick={type === 'next' ? () => swiper.slideNext() : () => swiper.slidePrev()}>{renderIcon()}</div>
     );
 }
 
