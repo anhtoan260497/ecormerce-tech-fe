@@ -56,7 +56,7 @@ function ProductWrapped({ products }: { products: IProductItem[] }) {
 
     const renderProductItems = () => {
         return products.map(item => {
-          return  <SwiperSlide style={{height : 'auto'}}><ProductItem {...item} /></SwiperSlide>
+          return  <SwiperSlide style={{height : 'auto'}} key={item.name}><ProductItem {...item} /></SwiperSlide>
         })
     }
 
