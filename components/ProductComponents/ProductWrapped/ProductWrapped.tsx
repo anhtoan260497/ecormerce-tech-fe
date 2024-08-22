@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
 import ProductItem from '../ProductItem/ProductItem';
 import styles from './ProductWrapped.module.scss';
-import { IProductItem } from '@/interface/Product';
+import { IProductItem } from '@/interfaces/Product';
 
 function ProductWrapped({ products }: { products: IProductItem[] }) {
 
@@ -33,7 +33,7 @@ function ProductWrapped({ products }: { products: IProductItem[] }) {
             },
             1200: {
                 slidesPerView: 5,
-                slidesPerGroup: 1
+                slidesPerGroup: 1,
             }
         }
     }
@@ -61,7 +61,7 @@ function ProductWrapped({ products }: { products: IProductItem[] }) {
     }
 
     return (
-        <Swiper {...swiperSettings} onSlideChange={(e) => calculateButton(e)} className={styles.productWrappedContainer}>
+        <Swiper {...swiperSettings}onSlideChange={(e) => calculateButton(e)} className={styles.productWrappedContainer}>
             {renderProductItems()}
             <CarouselNavigationBtn type='next' className={styles.swiperButtonNext} />
             <CarouselNavigationBtn type='prev' className={styles.swiperButtonPrev} />
