@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ProductItem.module.scss'
 import Image from 'next/image';
 import clsx from 'clsx';
-import { IProductItem } from '@/interface/Product';
+import { IProductItem } from '@/interfaces/Product';
 import { convertPrice } from '@/utils';
 
 function ProductItem(props: IProductItem) {

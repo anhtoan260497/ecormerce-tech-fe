@@ -5,7 +5,7 @@ import Menu from "@/components/Menu/Menu"
 import ProductItem from "@/components/ProductComponents/ProductItem/ProductItem"
 import ProductWrapped from "@/components/ProductComponents/ProductWrapped/ProductWrapped"
 import TopBanner from "@/components/TopBanner/TopBanner"
-import { IProductItem } from "@/interface/Product"
+import { IProductItem } from "@/interfaces/Product"
 
 
 const Home = () => {
